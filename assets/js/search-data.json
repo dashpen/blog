@@ -66,6 +66,17 @@
         
     
   
+    
+        ,"post6": {
+            "title": "Bash Checks",
+            "content": "echo Conda Check # test for a kernel installation test=&quot;jupyter&quot; # keyword check=`conda list | grep $test` # run command n=${#check} # determine length if [[ ${n} &gt; 0 ]]; # testt length then # greater than zero echo &quot;$check&quot; else # less than zero echo &quot;$test not found&quot; fi . Conda Check jupyter 1.0.0 py39h06a4308_7 jupyter_client 6.1.12 pyhd3eb1b0_0 jupyter_console 6.4.0 pyhd3eb1b0_0 jupyter_core 4.9.2 py39h06a4308_0 jupyter_server 1.13.5 pyhd3eb1b0_0 jupyterlab 3.3.2 pyhd3eb1b0_0 jupyterlab_pygments 0.1.2 py_0 jupyterlab_server 2.10.3 pyhd3eb1b0_1 jupyterlab_widgets 1.0.0 pyhd3eb1b0_1 . jupyter --version jupyter kernelspec list . Selected Jupyter core packages... IPython : 8.4.0 ipykernel : 6.15.1 ipywidgets : not installed jupyter_client : 7.3.4 jupyter_core : 4.11.1 jupyter_server : not installed jupyterlab : not installed nbclient : not installed nbconvert : not installed nbformat : not installed notebook : not installed qtconsole : not installed traitlets : 5.3.0 Available kernels: bash /home/dashpen/.local/share/jupyter/kernels/bash javascript /home/dashpen/.local/share/jupyter/kernels/javascript python3 /home/dashpen/.local/share/jupyter/kernels/python3 . test=&quot;python3&quot; # keyword check=`jupyter kernelspec list | grep $test` # run command n=${#check} # determine length if [[ ${n} &gt; 0 ]]; # testt length then # greater than zero echo &quot;$check&quot; else # less than zero echo &quot;$test not found&quot; fi . python3 /home/dashpen/.local/share/jupyter/kernels/python3 .",
+            "url": "https://dashpen.github.io/blog/2022/06/26/Bash.html",
+            "relUrl": "/2022/06/26/Bash.html",
+            "date": " • Jun 26, 2022"
+        }
+        
+    
+  
 
   
   
