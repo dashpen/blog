@@ -1,10 +1,9 @@
 ---
 toc: true
 layout: post
-description: Cool Gradient!
-categories: [markdown], [images]
+description: Cool Gradient
+categories: [markdown]
 title: Cool Gradient
-image: images/cool-gradient.jpg
 ---
 <!-- <style>
 body {
