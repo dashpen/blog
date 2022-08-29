@@ -7,7 +7,7 @@ title: Cool Gradient
 ---
 <style>
 body {
-  background-image: url('images/cool-gradient.jpg');
+  background-image: url('https://dashpen.github.io/blog/images/cool-gradient.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
