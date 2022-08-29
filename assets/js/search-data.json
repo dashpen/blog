@@ -108,7 +108,7 @@
   
       ,"page3": {
           "title": "Notes",
-          "content": "This is the Notes page. .",
+          "content": "This is the Notes page. . Python . Bash . Jupyter . HTML .",
           "url": "https://dashpen.github.io/blog/notes/",
           "relUrl": "/notes/",
           "date": ""
@@ -129,7 +129,7 @@
   
       ,"page8": {
           "title": "Vocabulary",
-          "content": "This is the Vocab page. .",
+          "content": "This is the Vocab page. . Python syntax .       .   |   |   | .   |   |   | . Markdown syntax .       .   |   |   | .   |   |   | . HTML sytnax .       .   |   |   | .   |   |   | .",
           "url": "https://dashpen.github.io/blog/vocab/",
           "relUrl": "/vocab/",
           "date": ""
