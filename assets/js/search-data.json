@@ -119,7 +119,7 @@
   
       ,"page3": {
           "title": "Notes",
-          "content": "This is the Notes page. . Each section is meant to be navigated by table of contents . Markdown . You can use HTML elements in markdown! Pretty interesting and useful. . Python . When writing if or for statements, you really want to be conscious of spaces, as there aren’t any brackets for code . Bash . Jupyter . HTML .",
+          "content": "This is the Notes page. . Each section is meant to be navigated by table of contents . Markdown . You can use HTML elements in markdown! Pretty interesting and useful. . Python . When writing if or for statements, you really want to be conscious of spaces, as there aren’t any brackets for code n is newline, t is tab (has to be in string) commas in a print makes a space . Lists Can store many of one type of variables | Can use .append(variable) to add new values When used with something called InfoDb, you can add a string key to a string to characterize something | . | First thing in a list is 0 Called an index | . | . | Dictionaries Have keys and values, unlike lists | . | For loop can do “for ‘variable’ in ‘list’” then use variable | can also do “for ‘variable’ in range(number)” for loops like java | . | While loops while(true) is based! Bash . | . | . Jupyter . HTML .",
           "url": "https://dashpen.github.io/blog/notes/",
           "relUrl": "/notes/",
           "date": ""
