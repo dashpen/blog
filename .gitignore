@@ -12,3 +12,12 @@ _notebooks/.ipynb_checkpoints
 .netlify
 .tweet-cache
 __pycache__
+
+# Ignore from local build
+
+images/copied_from_nb/  # images folder
+_posts/2022-08-22-First-Notebook.md
+_posts/2022-08-22-Google-Blog-Post.md
+_posts/2022-08-22-seinfeld-bee.md
+_posts/2022-08-26-Bash.md
+_posts/2022-08-26-New-Quiz.md
