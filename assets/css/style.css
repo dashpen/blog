@@ -482,4 +482,6 @@ pre code { font-size: 15px !important; }
 
 p code { font-size: 19px; }
 
+html, body { background-image: url("https://dashpen.github.io/blog/images/light-gradient.jpg"); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: #cccccc; }
+
 /*# sourceMappingURL=style.css.map */
