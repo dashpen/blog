@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "The Task",
-            "content": "Create Task . The Create Task Blog . toc:true - badges: true | comments: true | categories: [jupyter] | .",
-            "url": "https://dashpen.github.io/blog/2022/09/12/createTask.html",
-            "relUrl": "/2022/09/12/createTask.html",
+            "title": "Create Task",
+            "content": "The Task . Right now, I am thinking of making a software which takes in data, and outputs a table and a graph. I am going to use lists and dictionaries to store the data and will figure out the specifics later. .",
+            "url": "https://dashpen.github.io/blog/jupyter/2022/09/12/createTask.html",
+            "relUrl": "/jupyter/2022/09/12/createTask.html",
             "date": " • Sep 12, 2022"
         }
         
