@@ -37,3 +37,16 @@ commas in a print makes a space
 
 ## HTML
 
+## College Stuff
+<br>
+
+* Students are overwhelmed so they don't do what they want to.
+    * No sleep = good
+* Awful stats!
+    * 40% experience more stressed
+    * more than a third "too depressed to function"
+    * over 60% anxiety
+    * over 60% 'very lonely'
+    * over 60% overwhelmed
+* Making life happier takes work
+* A line of text
