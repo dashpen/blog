@@ -2,11 +2,11 @@
   
     
         "post0": {
-            "title": "Title",
-            "content": "var sus = &quot;sus&quot;; console.log(&quot;LOL&quot;); . Input In [2] var sus = &#34;sus&#34;; ^ SyntaxError: invalid syntax .",
-            "url": "https://dashpen.github.io/blog/2022/09/21/JS.html",
-            "relUrl": "/2022/09/21/JS.html",
-            "date": " • Sep 21, 2022"
+            "title": "Blackjack",
+            "content": "| Blackjack | .",
+            "url": "https://dashpen.github.io/blog/Blackjack/",
+            "relUrl": "/Blackjack/",
+            "date": " • Sep 22, 2022"
         }
         
     
@@ -150,7 +150,7 @@
   
       ,"page1": {
           "title": "The Best Page",
-          "content": "| Overview | Tutorial | Calculator | Binary | Grades | Graph | Life | Snake | .",
+          "content": "| Blackjack | .",
           "url": "https://dashpen.github.io/blog/TheBestPage/",
           "relUrl": "/TheBestPage/",
           "date": ""
