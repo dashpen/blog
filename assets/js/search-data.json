@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Blackjack",
-            "content": "| Blackjack | .",
+            "content": "| Blackjack | . HELLO . Dealer&#39;s cards are ?? . Your cards are ?? . The Dealer&#39;s score is: ?? . Your score is: ?? . .",
             "url": "https://dashpen.github.io/blog/Blackjack/",
             "relUrl": "/Blackjack/",
             "date": " • Sep 22, 2022"
