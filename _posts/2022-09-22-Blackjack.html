@@ -5,3 +5,46 @@ title: Blackjack
 ---
 
 {% include BestPageTable.html %}
+
+<html>
+<style>
+.myDiv {
+    margin:100px
+}
+</style>
+<head>
+    HELLO
+</head>
+<body>
+<div class="myDiv">
+    <p id="Dealer">Dealer's cards are ??</p>
+    <div>
+        <p id="Player">Your cards are ??</p>
+        <p id="DealerScore">The Dealer's score is: ??</p>
+        <p id="PlayerScore">Your score is: ??</p>
+        <div>
+            <img id="hit" src="https://dashpen.github.io/blog/images/hit.png"/>
+            <script>
+                var Cards = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"];
+                var rand = (Math.random() * 12);
+                var rand2 = (Math.random() * 12);
+                var playerCards = "Your Cards Are ??"
+                function RandCard(){
+                    return Cards[Math.round((Math.random() * 12))];
+                }
+                document.getElementById("hit").onclick = function(){
+                    console.log(RandCard());
+                    document.getElementById("Dealer").innerHTML = 
+                    "Dealer's cards are " + Cards[Math.round(rand)] + " and a " + Cards[Math.round(rand2)];
+                    playerCards = "Your cards are " + RandCard(12) + " and a " + RandCard(12);
+                    document.getElementById("Player").innerHTML = playerCards;
+                }
+                // document.getElementById("hit").onclick = function(){
+
+                // }
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+</html>
