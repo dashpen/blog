@@ -25,6 +25,7 @@ title: Blackjack
         <div>
             <img id="start" src="https://dashpen.github.io/blog/images/start.png"/>
             <img id="hit" src="https://dashpen.github.io/blog/images/hit.png"/>
+            <img id="stand" src="https://dashpen.github.io/blog/images/stand.png"/>
             <img id="win" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/win.png"/>
             <img id="lose" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/lose.png"/>
             <script>
@@ -33,8 +34,8 @@ title: Blackjack
                 var rand2 = (Math.random() * 12);
                 var playerScore;
                 var dealerScore;
-                const playerCards = [];
-                const dealerCards = [];
+                var playerCards = [];
+                var dealerCards = [];
                 var playerDisplay = "Your Cards Are ??";
                 // Generates a random card and returns it as a string
                 function RandCard(isP){
@@ -62,6 +63,8 @@ title: Blackjack
                 }
 
                 document.getElementById("start").onclick = function(){
+                    playerCards = [];
+                    dealerCards = [];
                     document.getElementById("Dealer").innerHTML = 
                     "Dealer's cards are " + RandCard(false) + " | " + RandCard(false);
                     playerDisplay = "Your cards are " + RandCard(true) + " | " + RandCard(true);
@@ -75,6 +78,31 @@ title: Blackjack
                     document.getElementById("PlayerScore").innerHTML = "Your Score is: " + CalculateScore(true);
                     if(CalculateScore(true) > 28){
                         document.getElementById("lose").style.visibility = "visible";
+                    } 
+                    // else if (CalculateScore(true) > CalculateScore(false)){
+                    //     document.getElementById("Dealer").innerHTML += " | " + RandCard(false);
+                    //     document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);
+                    //     if (CalculateScore(false) > 28){
+                    //         document.getElementById("win").style.visibility = "visible";
+                    //     }
+                    // }
+                    if(CalculateScore(true) == 28){
+                        document.getElementById("win").style.visibility = "visible";
+                    }
+                }
+                document.getElementById("stand").onclick = function(){
+                    let gameEnd = false;
+                    while(gameEnd == false){
+                        document.getElementById("Dealer").innerHTML += " | " + RandCard(false);
+                        document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);
+                        if (CalculateScore(false) > 28){
+                            document.getElementById("win").style.visibility = "visible";
+                            gameEnd = true;
+                            continue;
+                        } else if (CalculateScore(false) > CalculateScore(true)){
+                            document.getElementById("lose").style.visibility = "visible";
+                            gameEnd = true;
+                        }
                     }
                 }
             </script>
