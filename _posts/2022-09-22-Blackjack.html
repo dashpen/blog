@@ -23,25 +23,60 @@ title: Blackjack
         <p id="DealerScore">The Dealer's score is: ??</p>
         <p id="PlayerScore">Your score is: ??</p>
         <div>
+            <img id="start" src="https://dashpen.github.io/blog/images/start.png"/>
             <img id="hit" src="https://dashpen.github.io/blog/images/hit.png"/>
+            <img id="win" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/win.png"/>
+            <img id="lose" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/lose.png"/>
             <script>
                 var Cards = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"];
                 var rand = (Math.random() * 12);
                 var rand2 = (Math.random() * 12);
-                var playerCards = "Your Cards Are ??"
-                function RandCard(){
-                    return Cards[Math.round((Math.random() * 12))];
+                var playerScore;
+                var dealerScore;
+                const playerCards = [];
+                const dealerCards = [];
+                var playerDisplay = "Your Cards Are ??";
+                // Generates a random card and returns it as a string
+                function RandCard(isP){
+                    let randNumber = Math.round(Math.random() * 12);
+                    if(isP == true){
+                    playerCards.push(randNumber + 1);
+                    } else {
+                        dealerCards.push(randNumber + 1);
+                    }
+                    return Cards[randNumber];
+                }
+
+                function CalculateScore(isP){
+                    let sum = 0;
+                    if (isP == true){
+                        playerCards.forEach(function myFunction(element) {
+                            sum += element;
+                        });
+                    } else {
+                        dealerCards.forEach(function myFunction(element) {
+                            sum += element;
+                        }); 
+                    }
+                    return sum;
+                }
+
+                document.getElementById("start").onclick = function(){
+                    document.getElementById("Dealer").innerHTML = 
+                    "Dealer's cards are " + RandCard(false) + " | " + RandCard(false);
+                    playerDisplay = "Your cards are " + RandCard(true) + " | " + RandCard(true);
+                    document.getElementById("Player").innerHTML = playerDisplay;
+                    document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);
+                    document.getElementById("PlayerScore").innerHTML = "Your Score is: " + CalculateScore(true);
                 }
                 document.getElementById("hit").onclick = function(){
-                    console.log(RandCard());
-                    document.getElementById("Dealer").innerHTML = 
-                    "Dealer's cards are " + Cards[Math.round(rand)] + " and a " + Cards[Math.round(rand2)];
-                    playerCards = "Your cards are " + RandCard(12) + " and a " + RandCard(12);
-                    document.getElementById("Player").innerHTML = playerCards;
+                    playerDisplay = playerDisplay + " | " + RandCard(true);
+                    document.getElementById("Player").innerHTML = playerDisplay;
+                    document.getElementById("PlayerScore").innerHTML = "Your Score is: " + CalculateScore(true);
+                    if(CalculateScore(true) > 28){
+                        document.getElementById("lose").style.visibility = "visible";
+                    }
                 }
-                // document.getElementById("hit").onclick = function(){
-
-                // }
             </script>
         </div>
     </div>
