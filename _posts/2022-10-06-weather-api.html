@@ -1,0 +1,69 @@
+---
+layout: page
+permalink: /API/
+title: API
+---
+
+{% include BestPageTable.html %}
+
+<br>
+
+<h1>Pick A Die Side</h1>
+
+<br>
+
+<style>
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  /* float: left;
+  width: 33.33%; */
+  display: flex;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row {
+  /* content: "";
+  clear: both; */
+  display: flex;
+}
+</style>
+
+
+<div class="row">
+    <div class="column">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png" alt="die1" style="size: 100%;" id="die1">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png" alt="die2" style="width:100%" id="die2">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Alea_3.png" alt="die3" style="width:100%" id="die3">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Alea_4.png" alt="die4" style="width:100%" id="die4">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Alea_5.png" alt="die5" style="width:100%" id="die5">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png" alt="die6" style="width:100%" id="die6">
+    </div>
+  </div>
+
+<script>
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '65671ab810msha2094240f0c2e7bp13ebe1jsn2128e1ca3ddc',
+		'X-RapidAPI-Host': 'roll-dice1.p.rapidapi.com'
+	}
+};
+
+fetch('https://roll-dice1.p.rapidapi.com/rollDice', options)
+	.then(response => response.json().then(data =>{
+        console.log(data);
+    }))
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+</script>
