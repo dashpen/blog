@@ -4,20 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>The Best Page | Blog</title>
+<title>API | Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="The Best Page" />
+<meta property="og:title" content="API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="ඞඞඞ A good blog 👍" />
-<meta property="og:description" content="ඞඞඞ A good blog 👍" />
-<link rel="canonical" href="https://dashpen.github.io/blog/TheBestPage/" />
-<meta property="og:url" content="https://dashpen.github.io/blog/TheBestPage/" />
+<meta name="description" content="Blackjack Reddit API API" />
+<meta property="og:description" content="Blackjack Reddit API API" />
+<link rel="canonical" href="https://dashpen.github.io/blog/API/" />
+<meta property="og:url" content="https://dashpen.github.io/blog/API/" />
 <meta property="og:site_name" content="Blog" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-06T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="The Best Page" />
+<meta property="twitter:title" content="API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"ඞඞඞ A good blog 👍","headline":"The Best Page","url":"https://dashpen.github.io/blog/TheBestPage/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-06T00:00:00-05:00","datePublished":"2022-10-06T00:00:00-05:00","description":"Blackjack Reddit API API","headline":"API","mainEntityOfPage":{"@type":"WebPage","@id":"https://dashpen.github.io/blog/API/"},"url":"https://dashpen.github.io/blog/API/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://dashpen.github.io/blog/feed.xml" title="Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,7 +73,7 @@ window.onload = wrap_img;
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">The Best Page</h1>
+    <h1 class="post-title">API</h1>
   </header>
 
   <div class="post-content">
@@ -84,13 +85,74 @@ window.onload = wrap_img;
 
 <table>
     <tr>
-        <td><img src="/blog//images/favicon.ico" height="60" title="" alt="" /></td>
+        <td><img src="/blog//images/favicon.ico" height="60" title="" alt=""></td>
         <td><a href="/blog/Blackjack">Blackjack</a></td>
-        <td><a href="/blog/RedditAPI">Reddit API</a></td>
-        <td><a href="/blog/API">API</a></td>
+        <td><a href = "/blog/RedditAPI">Reddit API</a></td>
+        <td><a href = "/blog/API">API</a></td>
     </tr>
 </table>
 
+<br>
+
+<h1>Pick A Die Side</h1>
+
+<br>
+
+<style>
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  /* float: left;
+  width: 33.33%; */
+  display: flex;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row {
+  /* content: "";
+  clear: both; */
+  display: flex;
+}
+</style>
+
+
+<div class="row">
+    <div class="column">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png" alt="die1" style="size: 100%;" id="die1">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png" alt="die2" style="width:100%" id="die2">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Alea_3.png" alt="die3" style="width:100%" id="die3">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Alea_4.png" alt="die4" style="width:100%" id="die4">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Alea_5.png" alt="die5" style="width:100%" id="die5">
+    </div>
+    <div class="column">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png" alt="die6" style="width:100%" id="die6">
+    </div>
+  </div>
+
+<script>
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '65671ab810msha2094240f0c2e7bp13ebe1jsn2128e1ca3ddc',
+		'X-RapidAPI-Host': 'roll-dice1.p.rapidapi.com'
+	}
+};
+
+fetch('https://roll-dice1.p.rapidapi.com/rollDice', options)
+	.then(response => response.json().then(data =>{
+        console.log(data);
+    }))
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+</script>
   </div>
 
 </article>

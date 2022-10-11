@@ -4,20 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>The Best Page | Blog</title>
+<title>Reddit API | Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="The Best Page" />
+<meta property="og:title" content="Reddit API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="ඞඞඞ A good blog 👍" />
-<meta property="og:description" content="ඞඞඞ A good blog 👍" />
-<link rel="canonical" href="https://dashpen.github.io/blog/TheBestPage/" />
-<meta property="og:url" content="https://dashpen.github.io/blog/TheBestPage/" />
+<meta name="description" content="Blackjack Reddit API API" />
+<meta property="og:description" content="Blackjack Reddit API API" />
+<link rel="canonical" href="https://dashpen.github.io/blog/RedditAPI/" />
+<meta property="og:url" content="https://dashpen.github.io/blog/RedditAPI/" />
 <meta property="og:site_name" content="Blog" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-04T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="The Best Page" />
+<meta property="twitter:title" content="Reddit API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"ඞඞඞ A good blog 👍","headline":"The Best Page","url":"https://dashpen.github.io/blog/TheBestPage/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-04T00:00:00-05:00","datePublished":"2022-10-04T00:00:00-05:00","description":"Blackjack Reddit API API","headline":"Reddit API","mainEntityOfPage":{"@type":"WebPage","@id":"https://dashpen.github.io/blog/RedditAPI/"},"url":"https://dashpen.github.io/blog/RedditAPI/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://dashpen.github.io/blog/feed.xml" title="Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,7 +73,7 @@ window.onload = wrap_img;
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">The Best Page</h1>
+    <h1 class="post-title">Reddit API</h1>
   </header>
 
   <div class="post-content">
@@ -84,13 +85,59 @@ window.onload = wrap_img;
 
 <table>
     <tr>
-        <td><img src="/blog//images/favicon.ico" height="60" title="" alt="" /></td>
+        <td><img src="/blog//images/favicon.ico" height="60" title="" alt=""></td>
         <td><a href="/blog/Blackjack">Blackjack</a></td>
-        <td><a href="/blog/RedditAPI">Reddit API</a></td>
-        <td><a href="/blog/API">API</a></td>
+        <td><a href = "/blog/RedditAPI">Reddit API</a></td>
+        <td><a href = "/blog/API">API</a></td>
     </tr>
 </table>
 
+<p id="data" ></p>
+<p id="title"></p>
+<p id="comments"></p>
+<a id="link" href="" style="size: 100px;"></a>
+<br>
+<img id="preview">
+
+<script>
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '65671ab810msha2094240f0c2e7bp13ebe1jsn2128e1ca3ddc',
+		'X-RapidAPI-Host': 'reddit34.p.rapidapi.com'
+	}
+};
+
+fetch('https://reddit34.p.rapidapi.com/getTopPopularPosts?time=day', options)
+	.then(response => response.json().then(data => {
+		var i = 0;
+		function time() {
+			var post = data.data.posts[i];
+        console.log(data);
+        document.getElementById("data").innerHTML = "The Top Post of Reddit Today has " + post.score + " upvotes";
+		document.getElementById("title").innerHTML = "Title: '" + post.title + "'";
+		document.getElementById("comments").innerHTML = "Number of comments: " + post.numComments;
+		document.getElementById("link").innerText  = 'link to the post on Reddit';
+		document.getElementById("link").setAttribute("href", post.permalink)
+		// document.createElement("img").src = data.data.posts[0].preview.url;
+		document.getElementById("preview").src = post.preview.url;
+		document.getElementById("preview").height = post.preview.height;
+		document.getElementById("preview").width = post.preview.width;
+
+		console.log(data.data.posts[0]);
+		i++;
+		if(i>20){
+			i=0;
+		}
+		}
+		time();
+		// setInterval(time, 10000)
+    })
+	)
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+</script>
   </div>
 
 </article>
