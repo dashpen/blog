@@ -1,11 +1,13 @@
+---
+toc: true
+layout: post
+description: The Create Task Blog
+categories: [markdown]
+title: Create Task Planning
+---
+
 # Create Task
 > The Create Task Blog
-
-- toc: true 
-- badges: true
-- comments: true
-- categories: [markdown]
-
 
 # Blackjack
 
