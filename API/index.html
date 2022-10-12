@@ -137,6 +137,9 @@ window.onload = wrap_img;
     </div>
   </div>
 
+  <h1 id="win", style="visibility: hidden">You Win!</h1>
+  <h1 id="lose", style="visibility: hidden">You Lose!</h1>
+
 <script>
 const options = {
 	method: 'GET',
@@ -149,6 +152,55 @@ const options = {
 fetch('https://roll-dice1.p.rapidapi.com/rollDice', options)
 	.then(response => response.json().then(data =>{
         console.log(data);
+        var die = data.data.Dice;
+
+        document.getElementById("die1").onclick = function() {
+          if(die == 1){
+            document.getElementById("win").style = "visibility: visible";
+          } else{
+            document.getElementById("lose").style = "visibility: visible";
+          }
+        }
+        
+        document.getElementById("die2").onclick = function() {
+          if(die == 2){
+            document.getElementById("win").style = "visibility: visible";
+          } else{
+            document.getElementById("lose").style = "visibility: visible";
+          }
+        }
+
+        document.getElementById("die3").onclick = function() {
+          if(die == 3){
+            document.getElementById("win").style = "visibility: visible";
+          } else{
+            document.getElementById("lose").style = "visibility: visible";
+          }
+        }
+
+        document.getElementById("die4").onclick = function() {
+          if(die == 4){
+            document.getElementById("win").style = "visibility: visible";
+          } else{
+            document.getElementById("lose").style = "visibility: visible";
+          }
+        }
+
+        document.getElementById("die5").onclick = function() {
+          if(die == 5){
+            document.getElementById("win").style = "visibility: visible";
+          } else{
+            document.getElementById("lose").style = "visibility: visible";
+          }
+        }
+
+        document.getElementById("die6").onclick = function() {
+          if(die == 6){
+            document.getElementById("win").style = "visibility: visible";
+          } else{
+            document.getElementById("lose").style = "visibility: visible";
+          }
+        }
     }))
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
