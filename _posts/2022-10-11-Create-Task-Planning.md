@@ -15,4 +15,7 @@ I already made a simple version of Blackjack, but for the final project I will m
 
 # Mario
 
-I am also planning on making a bootlegged version of Mario, with simple physics and mechanics.
+I am also planning on making a simple platformer with jumping and falling physics.
+
+# Purpose
+The purpose of these games is for entertainment, and to help me learn to code. It will go along with the other games on our group website.
