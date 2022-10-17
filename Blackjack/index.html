@@ -114,22 +114,46 @@ window.onload = wrap_img;
             <img id="stand" src="https://dashpen.github.io/blog/images/stand.png"/>
             <img id="win" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/win.png"/>
             <img id="lose" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/lose.png"/>
+            <img id="push"style="visibility: hidden;" src="https://dashpen.github.io/blog/images/push.png"/>
             <script>
                 var Cards = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"];
                 var rand = (Math.random() * 12);
                 var rand2 = (Math.random() * 12);
+                var winScore = 21;
+                var isPlayerOver = false;
+                var isDealerOver = false;
                 var playerScore;
                 var dealerScore;
                 var playerCards = [];
                 var dealerCards = [];
+                var playerAces = [];
+                var dealerAces = [];
                 var playerDisplay = "Your Cards Are ??";
                 // Generates a random card and returns it as a string
                 function RandCard(isP){
                     let randNumber = Math.round(Math.random() * 12);
                     if(isP == true){
-                    playerCards.push(randNumber + 1);
+                        if(randNumber == 0){
+                            playerCards.push(11);
+                            playerAces.push(-10);
+                        }
+                        else if(randNumber >= 9){
+                            playerCards.push(10);
+                        }
+                        else{
+                            playerCards.push(randNumber + 1);
+                        }
                     } else {
-                        dealerCards.push(randNumber + 1);
+                        if(randNumber == 0){
+                            dealerCards.push(11);
+                            dealerAces.push(-10);
+                        }
+                        if(randNumber >= 9){
+                            dealerCards.push(10);
+                        }
+                        else{
+                           dealerCards.push(randNumber + 1);
+                        }
                     }
                     return Cards[randNumber];
                 }
@@ -140,10 +164,22 @@ window.onload = wrap_img;
                         playerCards.forEach(function myFunction(element) {
                             sum += element;
                         });
+
+                        if (isPlayerOver){
+                                playerAces.forEach(function myFunction(element){
+                                    sum += element
+                                });
+                            }
                     } else {
                         dealerCards.forEach(function myFunction(element) {
                             sum += element;
                         }); 
+                        
+                        if (isDealerOver){
+                                dealerAces.forEach(function myFunction(element){
+                                    sum += element
+                                });
+                            }
                     }
                     return sum;
                 }
@@ -151,42 +187,69 @@ window.onload = wrap_img;
                 document.getElementById("start").onclick = function(){
                     playerCards = [];
                     dealerCards = [];
+                    playerAces = [];
+                    dealerAces = [];
+                    isDealerOver = false;
+                    isPlayerOver = false;
+                    
                     document.getElementById("lose").style.visibility = "hidden";
                     document.getElementById("win").style.visibility = "hidden";
-                    document.getElementById("Dealer").innerHTML = "Dealer's cards are ??";
-                    document.getElementById("Player").innerHTML = "Your cards are ??";
-                    document.getElementById("DealerScore").innerHTML = "The Dealer's score is: ??";
-                    document.getElementById("PlayerScore").innerHTML = "Your score is: ??"
-                    document.getElementById("Dealer").innerHTML = 
-                    "Dealer's cards are " + RandCard(false) + " | " + RandCard(false);
-                    playerDisplay = "Your cards are " + RandCard(true) + " | " + RandCard(true);
-                    document.getElementById("Player").innerHTML = playerDisplay;
+                    document.getElementById("push").style.visibility = "hidden";
+                    // document.getElementById("Dealer").innerHTML = "Dealer's cards are ??";
+                    // document.getElementById("Player").innerHTML = "Your cards are ??";
+                    // document.getElementById("DealerScore").innerHTML = "The Dealer's score is: ??";
+                    // document.getElementById("PlayerScore").innerHTML = "Your score is: ??"
+                    document.getElementById("Dealer").innerHTML = "Dealer's cards are " + RandCard(false) + " | " + RandCard(false);
+                    document.getElementById("Player").innerHTML = "Your cards are " + RandCard(true) + " | " + RandCard(true);
                     document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);
                     document.getElementById("PlayerScore").innerHTML = "Your Score is: " + CalculateScore(true);
+
+                    if((CalculateScore(true) == winScore) && (CalculateScore(false) == winScore)){
+                        document.getElementById("push").style.visibility = "visible";
+                    }
+                    else if(CalculateScore(true) == winScore){
+                        document.getElementById("win").style.visibility = "visible";
+                    }
+                    else if(CalculateScore(false) == winScore){
+                        document.getElementById("lose").style.visibility = "visible";
+                    }
                 }
                 document.getElementById("hit").onclick = function(){
-                    playerDisplay = playerDisplay + " | " + RandCard(true);
-                    document.getElementById("Player").innerHTML = playerDisplay;
+
+                    document.getElementById("Player").innerHTML += " | " + RandCard(true);
                     document.getElementById("PlayerScore").innerHTML = "Your Score is: " + CalculateScore(true);
-                    if(CalculateScore(true) > 28){
+
+
+                    if(CalculateScore(true) > winScore){
+                        isPlayerOver = true;
+                        document.getElementById("PlayerScore").innerHTML = "Your Score is: " + CalculateScore(true);
+                    }
+
+                    if(CalculateScore(true) > winScore){
                         document.getElementById("lose").style.visibility = "visible";
                     } 
-                    if(CalculateScore(true) == 28){
+
+                    if(CalculateScore(true) == winScore){
                         document.getElementById("win").style.visibility = "visible";
                     }
                 }
                 document.getElementById("stand").onclick = function(){
                     let gameEnd = false;
                     while(gameEnd == false){
-                        document.getElementById("Dealer").innerHTML += " | " + RandCard(false);
-                        document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);
-                        if (CalculateScore(false) > 28){
-                            document.getElementById("win").style.visibility = "visible";
+                        if (CalculateScore(false) == CalculateScore(true)){
+                            document.getElementById("push").style.visibility = "visible";
                             gameEnd = true;
-                            continue;
-                        } else if (CalculateScore(false) > CalculateScore(true)){
-                            document.getElementById("lose").style.visibility = "visible";
-                            gameEnd = true;
+                        } else {
+                            document.getElementById("Dealer").innerHTML += " | " + RandCard(false);
+                            document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);
+                            if (CalculateScore(false) > winScore){
+                                document.getElementById("win").style.visibility = "visible";
+                                gameEnd = true;
+                                continue;
+                            } else if (CalculateScore(false) > CalculateScore(true)){
+                                document.getElementById("lose").style.visibility = "visible";
+                                gameEnd = true;
+                            }
                         }
                     }
                 }
