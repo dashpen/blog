@@ -119,7 +119,7 @@ window.onload = wrap_img;
             <img id="win" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/win.png"/>
             <img id="lose" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/lose.png"/>
             <img id="push"style="visibility: hidden;" src="https://dashpen.github.io/blog/images/push.png"/>
-            <img id="club1" src="/blog/images/cards/clubs_ace.png"/>
+            <!-- <img id="club1" src="/blog/images/cards/clubs_ace.png"/> -->
             <script>
                 var Cards = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"];
                 const cardImages = ["clubs_ace", "clubs_2", "clubs_3", "clubs_4", "clubs_5", "clubs_6", "clubs_7","clubs_8", "clubs_9", "clubs_10", "clubs_jack", "clubs_queen", "clubs_king", 
@@ -171,27 +171,27 @@ window.onload = wrap_img;
                     var temp = '<div class="column"> <img src="/blog/images/cards/'+ cardImages[card] + '.png" alt="card" style="size: 100%;"> </div>';
                     console.log(temp);
                     document.getElementById("cardArray").innerHTML += temp;
-                    var thit = [];
-                    for(var i = 1; i <=13; i++){
-                        var key = "ace";
-                        if(i == 1){
-                            key = "ace";
-                        }
-                        else if(i == 11){
-                            key = "jack";
-                        }
-                        else if(i == 12){
-                            key = "queen";
-                        }
-                        else if(i == 13){
-                            key = "king";
-                        } else{
-                            key = i;
-                        }
-                        thit.push("spades_" + key);
+                    // var thit = [];
+                    // for(var i = 1; i <=13; i++){
+                    //     var key = "ace";
+                    //     if(i == 1){
+                    //         key = "ace";
+                    //     }
+                    //     else if(i == 11){
+                    //         key = "jack";
+                    //     }
+                    //     else if(i == 12){
+                    //         key = "queen";
+                    //     }
+                    //     else if(i == 13){
+                    //         key = "king";
+                    //     } else{
+                    //         key = i;
+                    //     }
+                    //     thit.push("spades_" + key);
                     
-                    }
-                    console.log(cardImages)
+                    // }
+                    // console.log(cardImages)
 
                 }
 
@@ -223,7 +223,7 @@ window.onload = wrap_img;
                 }
 
                 document.getElementById("start").onclick = function(){
-                    revealCard(1);
+                    // revealCard(1);
                     playerCards = [];
                     dealerCards = [];
                     playerAces = [];
