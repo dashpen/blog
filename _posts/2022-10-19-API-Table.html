@@ -1,0 +1,34 @@
+---
+layout: page
+permalink: /APITable/
+title: API Table
+---
+
+<html>
+    <body>
+        <div margin="100px">
+            <img id="club1" src="/blog/images/cards/clubs_ace.png"/>
+            <p id="text">Clicked Times = </p>
+            <script>
+                document.getElementById("club1").onclick = function(){
+                    const url = "https://swag.nighthawkcodingteams.cf/api";
+                    const options = {
+                        method: 'GET',
+                        mode: 'cors',
+                        cache: 'default',
+                        credentials: 'omit',
+                        headers: {
+                        'Content-Type': 'application/json'
+                        },
+                    };
+                    fetch(url, options).then(response => {response.json().then(data => {
+                        console.log(data);
+                        // document.getElementById("text").innerHTML += count;
+                        
+                        // data.count = data.count + 1;
+                    })});
+                }
+            </script>
+        </div>
+    </body>
+</html>
