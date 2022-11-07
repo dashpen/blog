@@ -1,0 +1,72 @@
+---
+layout: page
+permalink: /Platformer/
+title: Platformer
+---
+
+{% include BestPageTable.html %}
+
+<html>
+    <div id="ley">
+        <p id="1a">0</p>
+        <br>
+        <p id="2a">0</p>
+        <br>
+        <p id="3a">0</p>
+        <br>
+        <p id="4a">0</p>
+        <br>
+        <p id="5a">0</p>
+        <br>
+        <p id="6a">0</p>
+        <br>
+        <p id="7a">0</p>
+        <br>
+        <p id="8a">0</p>
+        <!-- <br>
+        <p id="9a">0</p>
+        <br>
+        <p id="10a">0</p>
+        <br>
+        <p id="11a">0</p>
+        <br>
+        <p id="12a">0</p>
+        <br>
+        <p id="13a">0</p>
+        <br>
+        <p id="14a">0</p>
+        <br>
+        <p id="15a">0</p>
+        <br>
+        <p id="16a">0</p> -->
+    </div>
+
+    <script>
+        const display = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a"];
+        // while(i<8){
+            var i = 0;
+            var a = 7;
+            document.getElementById("ley").addEventListener("keydown", () => {
+                console.log("Hello!")
+            })
+            setInterval(() => {
+                if (i==8){
+                    i = 0;
+                } 
+                if (a == 8){
+                    a = 0;
+                }
+                document.getElementById(display[i]).innerHTML = 1;
+                document.getElementById(display[a]).innerHTML = 0;
+                a = i;
+                i++;
+                
+            }, 1000);
+
+
+        // }
+
+
+    </script>
+
+</html>
