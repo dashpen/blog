@@ -13,9 +13,9 @@ title: Blackjack
 }
 .column {
   float: left;
-  /* width: 20%; */
+  width: 10%;
   display: flex;
-  /* padding: 5px; */
+  padding: 5px;
 }
 .row::after {
   content: "";
@@ -27,13 +27,18 @@ title: Blackjack
     HELLO
 </head>
 <body>
-<div class="myDiv">
-    <p id="Dealer">Dealer's cards are ??</p>
     <div class="row">
-        <div id="cardArray">
+        <div id="playerCardArray">
         </div>
-      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div id="dealerCardArray">
+        </div>
+    </div>
+<div class="myDiv">
     <div>
+        <p id="Dealer">Dealer's cards are ??</p>
         <p id="Player">Your cards are ??</p>
         <p id="DealerScore">The Dealer's score is: ??</p>
         <p id="PlayerScore">Your score is: ??</p>
@@ -45,13 +50,31 @@ title: Blackjack
             <img id="lose" style="visibility: hidden;" src="https://dashpen.github.io/blog/images/lose.png"/>
             <img id="push"style="visibility: hidden;" src="https://dashpen.github.io/blog/images/push.png"/>
             <!-- <img id="club1" src="/blog/images/cards/clubs_ace.png"/> -->
+            <p id="wins">Global Wins: </p>
+            <p id="losses">Global Losses: </p>
             <script>
+            
                 var Cards = ["Ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King"];
+                var cardNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, ]
                 const cardImages = ["clubs_ace", "clubs_2", "clubs_3", "clubs_4", "clubs_5", "clubs_6", "clubs_7","clubs_8", "clubs_9", "clubs_10", "clubs_jack", "clubs_queen", "clubs_king", 
-                                    'diamond_ace', 'diamond_2', 'diamond_3', 'diamond_4', 'diamond_5', 'diamond_6', 'diamond_7', 'diamond_8', 'diamond_9', 'diamond_10', 'diamond_jack', 'diamond_queen', 'diamond_king', 
+                                    'diamonds_ace', 'diamonds_2', 'diamonds_3', 'diamonds_4', 'diamonds_5', 'diamonds_6', 'diamonds_7', 'diamonds_8', 'diamonds_9', 'diamonds_10', 'diamonds_jack', 'diamonds_queen', 'diamonds_king', 
                                     'hearts_ace', 'hearts_2', 'hearts_3', 'hearts_4', 'hearts_5', 'hearts_6', 'hearts_7', 'hearts_8', 'hearts_9', 'hearts_10', 'hearts_jack', 'hearts_queen', 'hearts_king', 
                                     'spades_ace', 'spades_2', 'spades_3', 'spades_4', 'spades_5', 'spades_6', 'spades_7', 'spades_8', 'spades_9', 'spades_10', 'spades_jack', 'spades_queen', 'spades_king'];
                 var cardsPicked = [];
+                const url = 'https://swag.nighthawkcodingteams.cf'; // web
+                // const url = 'http://127.0.0.1:5000'; // local
+                const options = {
+                    method: 'PUT',
+                    mode: 'cors',
+                    cache: 'default',
+                    credentials: 'omit',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+                const get_options = {
+                    ...options, method: 'GET'
+                }
                 var rand = (Math.random() * 12);
                 var rand2 = (Math.random() * 12);
                 var winScore = 21;
@@ -62,9 +85,26 @@ title: Blackjack
                 var playerAces = [];
                 var dealerAces = [];
 
+                fetch(url + "/api/tester", get_options)
+                    .then(response => response.json().then(data => {
+                    document.getElementById("wins").innerHTML =  "Global Wins: " + data["Blackjack"].Wins;
+                    document.getElementById("losses").innerHTML =  "Global Losses: " + data["Blackjack"].Losses;
+                    })
+                )
+                .then(response => console.log(response))
+	            .catch(err => console.error(err))
+
+                function genInt(){
+                    let thing = Math.random() * 4
+                    console.log(thing)
+                    console.log(Math.trunc(thing))
+                }
+
                 // Generates a random card and returns it as a string
                 function RandCard(isP){
-                    let randNumber = Math.round(Math.random() * 12);
+                    let randNumber = Math.trunc(Math.random() * 13);
+                    let randCardType = Math.trunc(Math.random() * 4);
+                    
                     // Checks if you are making a card for the dealer or the player
                     if(isP == true){
                         // If the random card is an ace it will add 11 to the score and the option to have only 1 instead
@@ -84,42 +124,25 @@ title: Blackjack
                             dealerCards.push(11);
                             dealerAces.push(-10);
                         }
-                        if(randNumber >= 9){
+                        else if(randNumber >= 9){
                             dealerCards.push(10);
                         }
                         else{
                            dealerCards.push(randNumber + 1);
                         }
                     }
+                    revealCard(randNumber + randCardType*13, isP)
                     return Cards[randNumber];
                 }
                 // Function called every time you want an image of the card to show
-                function revealCard(card){
-                    var temp = '<div class="column"> <img src="/blog/images/cards/'+ cardImages[card] + '.png" alt="card" style="size: 10%;"> </div>';
-                    console.log(temp);
-                    document.getElementById("cardArray").innerHTML += temp;
-                    // var thit = [];
-                    // for(var i = 1; i <=13; i++){
-                    //     var key = "ace";
-                    //     if(i == 1){
-                    //         key = "ace";
-                    //     }
-                    //     else if(i == 11){
-                    //         key = "jack";
-                    //     }
-                    //     else if(i == 12){
-                    //         key = "queen";
-                    //     }
-                    //     else if(i == 13){
-                    //         key = "king";
-                    //     } else{
-                    //         key = i;
-                    //     }
-                    //     thit.push("spades_" + key);
-                    
-                    // }
-                    // console.log(cardImages)
+                function revealCard(card, isP){
+                    var temp = '<div class="column"> <img src="/blog/images/cards/'+ cardImages[card] + '.png" alt="card" style="size: 50%;"> </div>';
 
+                    if(isP){
+                        document.getElementById("playerCardArray").innerHTML += temp;
+                    }else{
+                        document.getElementById("dealerCardArray").innerHTML += temp;
+                    }
                 }
 
                 // Returns the score of the player or dealer
@@ -150,6 +173,24 @@ title: Blackjack
                     return sum;
                 }
 
+                function updateGlobal(isWon){
+                    link = url + "/api/tester";
+                    if(isWon){
+                        link = link + "/win";
+                    } else {
+                        link = link + "/loss";
+                    }
+                fetch(link, options)
+                    .then(response => response.json().then(data => {
+                    console.log(data);
+                    document.getElementById("wins").innerHTML =  "Global Wins: " + data.Wins;
+                    document.getElementById("losses").innerHTML =  "Global Losses: " + data.Losses;
+                    })
+                )
+                .then(response => console.log(response))
+	            .catch(err => console.error(err))
+                }
+
                 // Initialization of the game and resetting of the scores
                 document.getElementById("start").onclick = function(){
                     // revealCard(1);
@@ -159,6 +200,9 @@ title: Blackjack
                     dealerAces = [];
                     isDealerOver = false;
                     isPlayerOver = false;
+
+                    document.getElementById("playerCardArray").innerHTML = null;
+                    document.getElementById("dealerCardArray").innerHTML = null;
                     
                     document.getElementById("lose").style.visibility = "hidden";
                     document.getElementById("win").style.visibility = "hidden";
@@ -174,9 +218,11 @@ title: Blackjack
                     }
                     else if(CalculateScore(true) == winScore){
                         document.getElementById("win").style.visibility = "visible";
+                        updateGlobal(true);
                     }
                     else if(CalculateScore(false) == winScore){
                         document.getElementById("lose").style.visibility = "visible";
+                        updateGlobal(false);
                     }
                 }
 
@@ -194,10 +240,12 @@ title: Blackjack
 
                     if(CalculateScore(true) > winScore){
                         document.getElementById("lose").style.visibility = "visible";
+                        updateGlobal(false);
                     } 
 
                     if(CalculateScore(true) == winScore){
                         document.getElementById("win").style.visibility = "visible";
+                        updateGlobal(true);
                     }
                 }
 
@@ -208,6 +256,7 @@ title: Blackjack
 
                         if (CalculateScore(false) > CalculateScore(true)){   
                             document.getElementById("lose").style.visibility = "visible";
+                            updateGlobal(false);
                             gameEnd = true;
 
                         } else if (CalculateScore(false) == CalculateScore(true)){
@@ -216,14 +265,16 @@ title: Blackjack
 
                         } else {
                             document.getElementById("Dealer").innerHTML += " | " + RandCard(false);
-                            document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);4
+                            document.getElementById("DealerScore").innerHTML = "The Dealer's Score is: " + CalculateScore(false);
 
                             if (CalculateScore(false) > winScore){
                                 document.getElementById("win").style.visibility = "visible";
+                                updateGlobal(true);
                                 gameEnd = true;
 
                             } else if (CalculateScore(false) > CalculateScore(true)){
                                 document.getElementById("lose").style.visibility = "visible";
+                                updateGlobal(false);
                                 gameEnd = true;
                             }
                         }
