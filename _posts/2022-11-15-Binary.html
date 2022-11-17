@@ -1,0 +1,89 @@
+---
+layout: page
+permalink: /Binary/
+title: Binary
+description: talking about some of the groups
+categories: [markdown]
+---
+
+{% include BestPageTable.html %}
+
+<html>
+
+<style id="back">
+    body{
+        background-image: none;
+        /* background-color: rgb(0, 0, 0) */
+    }
+</style>
+    <input type="text" id="tx"> <br>
+    <p id="but" onclick="createBits()">Amount of Bits</p>
+    <div style="margin: 100px">
+        <input type="text" id="tx" name="Hello"> <br>
+        <p id="but" onclick="changeBg()">Helo</p>
+        <table>
+            <tr style="height: 100px" id="table">
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var bits = []
+        function convertToBinary(decimal){
+        var rem = decimal;
+        var result = ""
+        var ret = [];
+
+        while(rem >= 1){
+            ret.push(rem % 2)
+            rem = ~~(rem/2);
+        }
+
+        ret.reverse()
+
+        ret.forEach((c) => {
+            result = result + c
+        })
+        return result
+        }
+
+        function decimal(binary){
+            return parseInt(binary, 2)
+        }
+        
+        console.log(document.getElementById("tx").value)
+        // document.getElementById("but").onclick = changeBg()
+        function changeBg(){
+            var col = document.getElementById("tx").value
+            document.getElementById("back").innerHTML = 
+            "body{ background-image: none;  background-color: rgb(" + col + ") }";
+        }
+        
+        function off(number){
+            document.getElementById("but" + number).style = "background-color: white"
+        }
+
+        function on(number){
+            document.getElementById("but" + number).style = "background-color: yellow"
+        }
+
+        function createBits(){
+            bits = []
+            const bts = document.getElementById("tx").value
+            var res = ""
+            for(i = 0; i<bts; i++){
+                res += '<td id="but'+ i + '" style="background-color: white"></td>' + "\n"
+                bits[i] = 0
+            }
+            document.getElementById("table").innerHTML = res;
+        }
+
+        function getBits(){
+        }
+
+        function toggleBit(id){
+
+        }
+
+    </script>
+</html>
