@@ -5,6 +5,7 @@ description: First Presentation
 categories: [markdown]
 title: First Presentation
 ---
+{% include lessonTable.html %}
 
 # Variables
 Variables are ways to store data in a program and can be manipulated in many ways
