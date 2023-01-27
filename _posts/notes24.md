@@ -1,0 +1,44 @@
+---
+toc: true
+layout: post
+description: notes
+categories: [markdown]
+title: Week 24 notes
+---
+
+# Week 24
+
+## 5.1 / 5.2
+- Dopamine can be a good way to relax but the overindulgence of it can lead to harmful effects
+### Chatgpt
+- May disrupst existing industries (art, writing, etc)
+- Can be prone to bias
+### Reflection
+- Three beneficial effects of my computing
+    - Brings people together through shared gaming
+    - Teaches about gambling and how you lose all the time
+    - Brings entertainment to thoseo who play it
+- One detriment of my computing
+    - Player may want to play a game too much
+- Pros/Cons of Internet blockers
+    -Pros:
+        - Keeps students focused
+        - Can keep less tech-savvy students safe from malicious sites
+    -Cons:
+        - Can block sites students need to use that are productive (think aws sites)
+- The Digital Divide
+    - I feel like the real digital divide is the difference between having a computer and the Internet and not having a computer. If you have a computer it is not that much different than having a really powerful computer, but faster internet speeds make a bigger difference. I think where we live the digital divide is pretty insignificant, but I am talking from a point of privilege. 
+
+
+
+
+## Create Performance Task Plan
+- In order to get the maximum points on a CPT review you need to have:
+    - A visual way to demonstrate your code (video)
+    - A purpose written correctly
+    - A list that manages complexity
+    - Functions that help the program flow
+        - These functions need to have parameters and run differently with different parameters
+- The part of our project I will use is blackjack code that I made for another project. I checked and this code satisfies all of the above conditions and it will fit well in our page of games.
+- Since I already made the code, all I have to do is style it to fit our new website and choose what parts I want to showcase for the CPT write-up
+- The plan is to play the game and show the cards popping up and the different inputs I acan use

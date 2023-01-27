@@ -150,22 +150,22 @@ title: Blackjack
                     let sum = 0;
                     // Checks if player or dealer is being checked
                     if (isP == true){
-                        playerCards.forEach(function myFunction(element) {
+                        playerCards.forEach(element => {
                             sum += element;
                         });
                         // If the player is over 21 score, it will make all aces 1 instead of 11
                         if (isPlayerOver){
-                                playerAces.forEach(function myFunction(element){
+                                playerAces.forEach(element =>{
                                     sum += element
                                 });
                             }
                     } else {
-                        dealerCards.forEach(function myFunction(element) {
+                        dealerCards.forEach(element => {
                             sum += element;
                         }); 
                         
                         if (isDealerOver){
-                                dealerAces.forEach(function myFunction(element){
+                                dealerAces.forEach(element =>{
                                     sum += element
                                 });
                             }
