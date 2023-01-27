@@ -236,22 +236,22 @@ window.onload = wrap_img;
                     let sum = 0;
                     // Checks if player or dealer is being checked
                     if (isP == true){
-                        playerCards.forEach(function myFunction(element) {
+                        playerCards.forEach(element => {
                             sum += element;
                         });
                         // If the player is over 21 score, it will make all aces 1 instead of 11
                         if (isPlayerOver){
-                                playerAces.forEach(function myFunction(element){
+                                playerAces.forEach(element =>{
                                     sum += element
                                 });
                             }
                     } else {
-                        dealerCards.forEach(function myFunction(element) {
+                        dealerCards.forEach(element => {
                             sum += element;
                         }); 
                         
                         if (isDealerOver){
-                                dealerAces.forEach(function myFunction(element){
+                                dealerAces.forEach(element =>{
                                     sum += element
                                 });
                             }
@@ -385,7 +385,7 @@ window.onload = wrap_img;
     <div class="footer-col-wrapper">
       <div class="footer-col">
         <p class="feed-subscribe">
-          <a href="/blog/feed.xml">
+          <a href="https://dashpen.github.io/blog/feed.xml">
             <svg class="svg-icon orange">
               <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
             </svg><span>Subscribe</span>
