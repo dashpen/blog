@@ -7,7 +7,7 @@ title: Create Performence Task
 ---
 
 # Video:
-[](https://youtu.be/XkIJ-Kru4co)
+[Video](https://youtu.be/XkIJ-Kru4co)
 
 # 3 a.
 ## 3.a.i
