@@ -21,7 +21,7 @@ The input is pressing two buttons which represent different decisions made durin
 ## 3.b.i.
 ![]({{ site.baseurl }}/images/cpt3bi.png "An image")
 ## 3.b.ii.
-![]({{ site.baseurl }}/images/cpt3biii.png "An image")
+![]({{ site.baseurl }}/images/cptbii.png "An image")
 ## 3.b.iii.
 The array I chose was Cards
 ## 3.b.iv.
@@ -31,7 +31,7 @@ When it is called, a random index of the array is called. The value of this is t
 
 # 3 c.
 ## 3.c.i.
-![]({{ site.baseurl }}/images/cpt3ci2.png "An image")
+![]({{ site.baseurl }}/images/cptci2.png "An image")
 ## 3.c.ii.
 ![]({{ site.baseurl }}/images/cpt3cii.png "An image")
 ## 3.c.iii.
