@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -186,8 +186,14 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on where you have observed these working?  Provide a defintion of purpose.<ol>
-<li>Flask app object</li>
-<li>SQLAlchemy db object</li>
+<li>Flask app object<ul>
+<li>is a python website useful for making apis</li>
+</ul>
+</li>
+<li>SQLAlchemy db object<ul>
+<li>is a way of abstracting SQL to be used with python and flask</li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>
@@ -473,12 +479,18 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on how these work?<ol>
-<li>Create All Tables from db Object
- Uses the schema of Users to build a table with the necessary data</li>
-<li>User Object Constructors
- Each u1, u2, etc are objects of class user which are created when they are initialized</li>
-<li>Try / Except 
- The Try/Except tries to add each object created above to the database and if it fails, doesn't add the object.</li>
+<li>Create All Tables from db Object<ul>
+<li>Uses the schema of Users to build a table with the necessary data</li>
+</ul>
+</li>
+<li>User Object Constructors<ul>
+<li>Each u1, u2, etc are objects of class user which are created when they are initialized</li>
+</ul>
+</li>
+<li>Try / Except <ul>
+<li>The Try/Except tries to add each object created above to the database and if it fails, doesn't add the object.</li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>
@@ -520,6 +532,21 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/tmp/ipykernel_399/4082043660.py:47: SAWarning: New instance &lt;ChessUsers at 0x7f2aa5f91c10&gt; with identity key (&lt;class '__main__.ChessUsers'&gt;, (100,), None) conflicts with persistent instance &lt;ChessUsers at 0x7f2ac06eb160&gt;
+  db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -534,8 +561,14 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on purpose of following<ol>
-<li>User.query.filter_by</li>
-<li>user.password</li>
+<li>User.query.filter_by<ul>
+<li>returns a user object from db based on id</li>
+</ul>
+</li>
+<li>user.password<ul>
+<li>password attribute of objeect user</li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>
@@ -609,30 +642,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{'uid': 102, 'name': 'dash', 'password': 'sha256$ZhF6OReNwq5ns80j$c06bb4c52d8dd6805eb046c6a5aa8074317df75a8b715b3714686ae67fa3e259', 'dob': '05-05-0055', 'games': ''}
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -647,10 +656,22 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on purpose of following<ol>
-<li>user.find_by_uid() and try/except</li>
-<li>user = User(...)</li>
-<li>user.dob and try/except</li>
-<li>user.create() and try/except</li>
+<li>user.find_by_uid() and try/except<ul>
+<li>returns a user object from the db based on given id</li>
+</ul>
+</li>
+<li>user = User(...)<ul>
+<li>Creates a new user object using class User</li>
+</ul>
+</li>
+<li>user.dob and try/except<ul>
+<li>user.dob is the dob attribute of the created user object</li>
+</ul>
+</li>
+<li>user.create() and try/except<ul>
+<li>user.create() runs the create function on the user object, adding the data in the object to the database</li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>
@@ -707,7 +728,7 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Created
- {'uid': 103, 'name': 'd', 'password': 'sha256$afHTxeQU8JkjBKsN$b7f985a6e66892a14d9fb6fbe6dadf95197c328d3e350175109e2d4328f122dc', 'dob': 'd', 'games': ''}
+ {'uid': 101, 'name': 'dash', 'password': 'sha256$BGL7dNOC0ATXlDIf$cde4267aba7c992d9e7940d8228fa18d45c31ba277d61913607db44310b2af13', 'dob': '05050050', 'games': ''}
 </pre>
 </div>
 </div>
@@ -729,8 +750,10 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on purpose of following<ol>
-<li>User.query.all</li>
-<li>json_ready assignment, google List Comprehension</li>
+<li>User.query.all
+Returns a list of all of the user objects in the db</li>
+<li>json_ready assignment, google List Comprehension
+makes a json of all of the users in the table</li>
 </ol>
 </li>
 </ul>
@@ -769,18 +792,13 @@ window.onload = wrap_img;
 <div class="output_text output_subarea output_execute_result">
 <pre>[{'uid': 100,
   'name': 'Toby',
-  'password': 'sha256$TwmiyNJd2q7JPiG5$18d20e55d0bb51e51e37f3e247ef4c01a0904898a4c839efa30afa8e9a04348a',
+  'password': 'sha256$zqq8WeeStZoA4OHQ$ebc0eb41c502db9cb89c4ad867b75d856113e065cd3404a9e3ab2ef6a26eb737',
   'dob': '11-11-1111',
   'games': ''},
- {'uid': 102,
+ {'uid': 101,
   'name': 'dash',
-  'password': 'sha256$ZhF6OReNwq5ns80j$c06bb4c52d8dd6805eb046c6a5aa8074317df75a8b715b3714686ae67fa3e259',
-  'dob': '05-05-0055',
-  'games': ''},
- {'uid': 103,
-  'name': 'd',
-  'password': 'sha256$afHTxeQU8JkjBKsN$b7f985a6e66892a14d9fb6fbe6dadf95197c328d3e350175109e2d4328f122dc',
-  'dob': 'd',
+  'password': 'sha256$BGL7dNOC0ATXlDIf$cde4267aba7c992d9e7940d8228fa18d45c31ba277d61913607db44310b2af13',
+  'dob': '05050050',
   'games': ''}]</pre>
 </div>
 
@@ -844,18 +862,13 @@ window.onload = wrap_img;
 <div class="output_text output_subarea output_execute_result">
 <pre>[{'uid': 100,
   'name': 'Toby',
-  'password': 'sha256$TwmiyNJd2q7JPiG5$18d20e55d0bb51e51e37f3e247ef4c01a0904898a4c839efa30afa8e9a04348a',
+  'password': 'sha256$zqq8WeeStZoA4OHQ$ebc0eb41c502db9cb89c4ad867b75d856113e065cd3404a9e3ab2ef6a26eb737',
   'dob': '11-11-1111',
   'games': ''},
- {'uid': 102,
+ {'uid': 101,
   'name': 'dash',
-  'password': 'sha256$ZhF6OReNwq5ns80j$c06bb4c52d8dd6805eb046c6a5aa8074317df75a8b715b3714686ae67fa3e259',
-  'dob': '05-05-0055',
-  'games': ''},
- {'uid': 103,
-  'name': 'd',
-  'password': 'sha256$afHTxeQU8JkjBKsN$b7f985a6e66892a14d9fb6fbe6dadf95197c328d3e350175109e2d4328f122dc',
-  'dob': 'd',
+  'password': 'sha256$BGL7dNOC0ATXlDIf$cde4267aba7c992d9e7940d8228fa18d45c31ba277d61913607db44310b2af13',
+  'dob': '05050050',
   'games': ''}]</pre>
 </div>
 
@@ -878,26 +891,10 @@ window.onload = wrap_img;
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="n">user</span> <span class="o">=</span> <span class="n">getUser</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-<span class="n">deleteUser</span><span class="p">(</span><span class="mi">103</span><span class="p">)</span>
+<span class="c1"># deleteUser(103)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>"deleted {'uid': 103, 'name': 'd', 'password': 'sha256$afHTxeQU8JkjBKsN$b7f985a6e66892a14d9fb6fbe6dadf95197c328d3e350175109e2d4328f122dc', 'dob': 'd', 'games': ''}"</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -928,13 +925,13 @@ window.onload = wrap_img;
 <div class="output_text output_subarea output_execute_result">
 <pre>[{'uid': 100,
   'name': 'Toby',
-  'password': 'sha256$TwmiyNJd2q7JPiG5$18d20e55d0bb51e51e37f3e247ef4c01a0904898a4c839efa30afa8e9a04348a',
+  'password': 'sha256$zqq8WeeStZoA4OHQ$ebc0eb41c502db9cb89c4ad867b75d856113e065cd3404a9e3ab2ef6a26eb737',
   'dob': '11-11-1111',
   'games': ''},
- {'uid': 102,
+ {'uid': 101,
   'name': 'dash',
-  'password': 'sha256$ZhF6OReNwq5ns80j$c06bb4c52d8dd6805eb046c6a5aa8074317df75a8b715b3714686ae67fa3e259',
-  'dob': '05-05-0055',
+  'password': 'sha256$BGL7dNOC0ATXlDIf$cde4267aba7c992d9e7940d8228fa18d45c31ba277d61913607db44310b2af13',
+  'dob': '05050050',
   'games': ''}]</pre>
 </div>
 
