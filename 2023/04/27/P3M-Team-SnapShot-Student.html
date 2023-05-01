@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      21 min read
+      20 min read
     
 </span></p>
 
@@ -584,30 +584,6 @@ Model: acer Year: 2004
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">OperationalError</span>                          Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[25], line 15</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span> cursor = conn.cursor()
-<span class="ansi-green-intense-fg ansi-bold">     14</span> # Create a table in the database using SQL commands
-<span class="ansi-green-fg">---&gt; 15</span> cursor.execute(&#39;&#39;&#39;CREATE TABLE students
-<span class="ansi-green-intense-fg ansi-bold">     16</span>                  (id INTEGER PRIMARY KEY, name TEXT, grade INTEGER)&#39;&#39;&#39;)
-<span class="ansi-green-intense-fg ansi-bold">     18</span> # Commit the changes to the database
-<span class="ansi-green-intense-fg ansi-bold">     19</span> conn.commit()
-
-<span class="ansi-red-fg">OperationalError</span>: table students already exists</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -1091,30 +1067,6 @@ The menu function below is missing some of the CRUD functions for the specified 
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">OperationalError</span>                          Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[31], line 15</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span> cursor = conn.cursor()
-<span class="ansi-green-intense-fg ansi-bold">     14</span> # Create a table in the database using SQL commands
-<span class="ansi-green-fg">---&gt; 15</span> cursor.execute(&#39;&#39;&#39;CREATE TABLE images
-<span class="ansi-green-intense-fg ansi-bold">     16</span>                  (name TEXT PRIMARY KEY, data BLOB)&#39;&#39;&#39;)
-<span class="ansi-green-intense-fg ansi-bold">     18</span> # Commit the changes to the database
-<span class="ansi-green-intense-fg ansi-bold">     19</span> conn.commit()
-
-<span class="ansi-red-fg">OperationalError</span>: table images already exists</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -1205,33 +1157,6 @@ Cell <span class="ansi-green-fg">In[31], line 15</span>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Error: no &#34;view&#34; mailcap rules found for type &#34;image/png&#34;
-WARNING: You don&#39;t seem to have any mimeinfo.cache files.
-Try running the update-desktop-database command. If you
-don&#39;t have this command you should install the
-desktop-file-utils package. This package is available from
-http://freedesktop.org/wiki/Software/desktop-file-utils/
-Can&#39;t call method &#34;get_value&#34; on an undefined value at /usr/bin/mimeopen line 159.
-Start : This command cannot be run due to the error: The system cannot find the file specified.
-At line:1 char:1
-+ Start &#34;/tmp/tmpigfaezoz.PNG&#34;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Start-Process], InvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperationException,Microsoft.PowerShell.Commands.StartProcessCommand
- 
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -1282,33 +1207,6 @@ Using the same table, find a new .jpg image and add its image data to the databa
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Error: no &#34;view&#34; mailcap rules found for type &#34;image/png&#34;
-WARNING: You don&#39;t seem to have any mimeinfo.cache files.
-Try running the update-desktop-database command. If you
-don&#39;t have this command you should install the
-desktop-file-utils package. This package is available from
-http://freedesktop.org/wiki/Software/desktop-file-utils/
-Can&#39;t call method &#34;get_value&#34; on an undefined value at /usr/bin/mimeopen line 159.
-Start : This command cannot be run due to the error: The system cannot find the file specified.
-At line:1 char:1
-+ Start &#34;/tmp/tmpaojcr5lh.PNG&#34;
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (:) [Start-Process], InvalidOperationException
-    + FullyQualifiedErrorId : InvalidOperationException,Microsoft.PowerShell.Commands.StartProcessCommand
- 
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
